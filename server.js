@@ -8,6 +8,10 @@ router.get('/', (req, res) => {
     res.send('api testing...')
 });
 
+router.get('/hello', (req, res) => {
+    res.send('hi')
+});
+
 app.use('/api', router);
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}.`))
