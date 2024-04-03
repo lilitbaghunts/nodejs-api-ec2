@@ -1,9 +1,13 @@
 import express from "express";
 
 const app = express();
+const router = express.Router();
+const PORT = process.env.PORT || 3001;
 
-app.get('/', (req, res) => {
-    res.json('api testing...')
+router.get('/', (req, res) => {
+    res.send('api testing...')
 });
 
-app.listen(3001, () => console.log('Server listening on port 3001.'))
+app.use('/api', router);
+
+app.listen(PORT, () => console.log(`Server listening on port ${PORT}.`))
